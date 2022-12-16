@@ -12,6 +12,9 @@ const parseUrl = express.urlencoded({ extended: false });
 const parseJson = express.json({ extended: false });
 
 const PORT = process.env.PORT || 4100;
+app.get('/',(req,res) => {
+    res.send('Welcome to Express')
+})
 
 app.post("/paynow", [parseUrl, parseJson], (req, res) => {
     // Route for making payment
